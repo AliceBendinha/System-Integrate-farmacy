@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "info": {
     "name": "Farmacia API Collection",
@@ -421,3 +422,428 @@
     }
   ]
 }
+=======
+{
+  "info": {
+    "name": "Farmacia API Collection",
+    "description": "Collection de testes para Farmacia API REST",
+    "version": "1.0"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Autenticação",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@farmacia.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "logout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Renovar Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/refresh",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "refresh"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Perfil do Usuário",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/me",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "me"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Farmacias",
+      "item": [
+        {
+          "name": "Listar Farmacias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/farmacias",
+              "host": ["{{base_url}}"],
+              "path": ["farmacias"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Farmacia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/farmacias?search=Central",
+              "host": ["{{base_url}}"],
+              "path": ["farmacias"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Central"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obter Farmacia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/farmacias/1",
+              "host": ["{{base_url}}"],
+              "path": ["farmacias", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar Farmacia",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Farmácia Nova\",\n  \"localizacao\": \"Rua Nova, 456\",\n  \"telefone\": \"11 3000-1111\",\n  \"email\": \"nova@farmacia.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/farmacias",
+              "host": ["{{base_url}}"],
+              "path": ["farmacias"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Farmacia",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Farmácia Central Atualizada\",\n  \"localizacao\": \"Rua Principal, 789\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/farmacias/1",
+              "host": ["{{base_url}}"],
+              "path": ["farmacias", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Farmacia",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/farmacias/1",
+              "host": ["{{base_url}}"],
+              "path": ["farmacias", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Listar Produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["produtos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Produtos em Falta",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/produtos?em_falta=true",
+              "host": ["{{base_url}}"],
+              "path": ["produtos"],
+              "query": [
+                {
+                  "key": "em_falta",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar por Categoria",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/produtos?categoria_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["produtos"],
+              "query": [
+                {
+                  "key": "categoria_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar Produto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Aspirina 500mg\",\n  \"codigo\": \"ASP-500-001\",\n  \"preco\": 8.50,\n  \"categoria_id\": 1,\n  \"fabricante\": \"Laboratório ABC\",\n  \"data_validade\": \"2026-12-31\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["produtos"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Estoques",
+      "item": [
+        {
+          "name": "Listar Estoques",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/estoques",
+              "host": ["{{base_url}}"],
+              "path": ["estoques"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Estoques em Falta",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/estoques?em_falta=true",
+              "host": ["{{base_url}}"],
+              "path": ["estoques"],
+              "query": [
+                {
+                  "key": "em_falta",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar Estoque",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmacia_id\": 1,\n  \"produto_id\": 3,\n  \"quantidade\": 150,\n  \"stock_minimo\": 20\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/estoques",
+              "host": ["{{base_url}}"],
+              "path": ["estoques"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Repor Estoque",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantidade\": 50\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/estoques/1/repor",
+              "host": ["{{base_url}}"],
+              "path": ["estoques", "1", "repor"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remover do Estoque",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantidade\": 10\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/estoques/1/remover",
+              "host": ["{{base_url}}"],
+              "path": ["estoques", "1", "remover"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Serviços",
+      "item": [
+        {
+          "name": "Listar Serviços",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/servicos",
+              "host": ["{{base_url}}"],
+              "path": ["servicos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar Serviço",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmacia_id\": 1,\n  \"nome\": \"Aferição de Glicose\",\n  \"descricao\": \"Teste rápido de glicemia\",\n  \"preco\": 20.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/servicos",
+              "host": ["{{base_url}}"],
+              "path": ["servicos"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/api"
+    },
+    {
+      "key": "jwt_token",
+      "value": ""
+    }
+  ]
+}
+>>>>>>> master
