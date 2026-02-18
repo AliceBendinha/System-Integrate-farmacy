@@ -114,6 +114,7 @@ php artisan key:generate
 createdb farmacia_db
 ```
 
+
 ### 4. Executar Migrations e Seeders
 ```bash
 php artisan migrate --force

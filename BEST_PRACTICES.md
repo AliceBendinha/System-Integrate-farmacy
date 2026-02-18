@@ -13,6 +13,7 @@
 
 ---
 
+
 ## 🔹 Arquitetura REST
 
 ### ✅ Implementado

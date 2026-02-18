@@ -7,6 +7,7 @@ echo "║   FARMACIA API - QUICK START SETUP    ║"
 echo "╚════════════════════════════════════════╝"
 echo ""
 
+
 # 1. Instalar dependências
 echo "📦 [1/6] Instalando dependências..."
 composer install --quiet

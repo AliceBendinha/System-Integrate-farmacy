@@ -13,6 +13,7 @@ Sua API REST para farmácias foi **completamente desenvolvida e estruturada**, s
 
 ---
 
+
 ## 📁 O Que Foi Criado
 
 ### 1️⃣ **MODELS (9 modelos com relações)**

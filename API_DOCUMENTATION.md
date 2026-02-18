@@ -5,6 +5,7 @@ API REST completa para gerenciamento de farmácias, produtos, estoques e serviç
 
 ## 📋 Stack Tecnológico
 
+
 - **Framework:** Laravel 12
 - **Banco de Dados:** PostgreSQL
 - **Autenticação:** JWT (Firebase PHP-JWT)
